@@ -44,3 +44,20 @@ WHERE employees.salary > 10000
 EXCEPT
 SELECT * from employees
 WHERE employees.name LIKE '%son';
+
+-- query 21
+create table projects (
+	id INT PRIMARY KEY,
+	team_members text[]
+);
+
+-- query 22
+SELECT *
+FROM projects
+WHERE team_members @> ARRAY['1'];
+
+-- query 23
+SELECT *
+FROM projects
+WHERE team_members[0] = '1';
+
